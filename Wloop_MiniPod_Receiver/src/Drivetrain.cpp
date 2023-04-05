@@ -4,7 +4,8 @@
 
 // Class constructor
 Drivetrain::Drivetrain() { 
-    bidirectional = false; //false by default
+    bidirectional = false; // False by default
+    mode = 0; // 0 by default
     k_sensitivity = 0.8;
     // Initialize motor speeds
     for (int i = 0; i < NUM_BLDC_PAIRS; i++) {
@@ -27,6 +28,14 @@ void Drivetrain::initializeAll() {
     }
     // Idle
     stopAll();
+}
+
+void Drivetrain::setMode(uint8_t newMode) {
+    mode = newMode;
+}
+
+uint8_t Drivetrain::getMode() {
+    return mode;
 }
 
 void Drivetrain::runAll() {
