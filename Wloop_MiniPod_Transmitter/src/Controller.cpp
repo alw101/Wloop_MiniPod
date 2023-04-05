@@ -25,3 +25,12 @@ int Controller::getPower() {
     potPower = map(potPower, 0, 4095, 0, 100);
     return potPower;
 }
+
+void Controller::printAll() {
+    Serial.print("x_axis: ");
+    Serial.print(x_val);
+    Serial.print("\ty_axis: ");
+    Serial.print(y_val);
+    Serial.print("\tpower: ");
+    Serial.println(potPower);
+}

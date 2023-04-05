@@ -20,6 +20,8 @@ public:
     int getyVal();
     // returns the value of the potentiometer (min: 0, max: 100)
     int getPower();
+    // prints all controller input readings
+    void printAll();
 
 };
 #endif
