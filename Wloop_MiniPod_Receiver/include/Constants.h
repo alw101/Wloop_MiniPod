@@ -30,7 +30,7 @@ const int STEER_3_PIN = 19;//                         Back
 // Servo array order is: steer_0, steer_1, prop_0, prop_1, steer_2, steer_3
 const int SERVO_PINS[NUM_SERVO] = {STEER_0_PIN, STEER_1_PIN, PROP_0_PIN, PROP_1_PIN, STEER_2_PIN, STEER_3_PIN};
 // Servomotors initial positions, same order as previous array
-const float SERVO_INIT[NUM_SERVO] = {90, 90, 90, 90, 90, 90};
+const float SERVO_INIT[NUM_SERVO] = {122, 63, 97, 101, 110, 69};
 // Servomotors maximum angle (in degrees) allowed (+- from initial position)
 const float MAX_ANGLE = 50;
 

@@ -22,7 +22,17 @@ void OnDataRecv(const uint8_t* mac, const uint8_t* incomingData, int len) {
   memcpy(&data, incomingData, sizeof(data));
   // Code that will run everytime data is received -----------------------------------------------
 
-  switch(pod.getMode()) {
+  pod.setSteer(data.jStick_y, data.jStick_y);
+  pod.setTravel(data.jStick_y);
+
+  Serial.print(data.jStick_x);
+  Serial.print("/t");
+  Serial.print(data.jStick_y);
+  Serial.print("/t");
+  Serial.println(data.BLDCPower);
+  
+
+  /*switch(pod.getMode()) {
     case 1: // Manual mode
 
 
@@ -34,7 +44,7 @@ void OnDataRecv(const uint8_t* mac, const uint8_t* incomingData, int len) {
     default: // Stops the pod
 
 
-  }
+  }*/
 
 }
 
