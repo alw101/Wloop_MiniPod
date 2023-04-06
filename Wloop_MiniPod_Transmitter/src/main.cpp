@@ -6,7 +6,7 @@
 
 // ESP-NOW setup -----------------------------------------------------------------------------------
 // MAC address of the receiver board 
-uint8_t receiverMACAddress[] = {0xCC, 0xDD, 0xA7, 0x11, 0xA3, 0xE4};
+uint8_t receiverMACAddress[] = {0xCC, 0xDB, 0xA7, 0x11, 0xA3, 0xE4};
 
 // Data structure of package, change the content accordingly
 typedef struct dataPack {

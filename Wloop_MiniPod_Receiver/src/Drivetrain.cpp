@@ -39,14 +39,24 @@ uint8_t Drivetrain::getMode() {
 }
 
 void Drivetrain::runAll() {
-    // Send signal to BLDC motors
-    for (int i = 0; i < NUM_BLDC_PAIRS; i++) {
-        BLDCMotors[i].writeMicroseconds(BLDCSignals[i]);
-    }
     // Send signal to servos
+    Serial.print("Servos:\t");
     for (int i = 0; i < NUM_SERVO; i++) {
         servos[i].write(servoPositions[i]);
+
+        // Print output
+        Serial.print(servoPositions[i]);
+        Serial.print("\t");
     }
+
+    // Send signal to BLDC motors
+    Serial.print("BLDCMotors:\t");
+    for (int i = 0; i < NUM_BLDC_PAIRS; i++) {
+        BLDCMotors[i].writeMicroseconds(BLDCSignals[i]);
+        Serial.print(BLDCSignals[i]);
+        Serial.print("\t");
+    }
+    Serial.println();
 }
 
 void Drivetrain::stopAll() {
@@ -85,7 +95,6 @@ void Drivetrain::setBLDCSpeed(int speed) {
     for (int i = 0; i < NUM_BLDC_PAIRS; i++) {
         BLDCSignals[i] = PWMSignal;
     }
-
     runAll();
 }
 
