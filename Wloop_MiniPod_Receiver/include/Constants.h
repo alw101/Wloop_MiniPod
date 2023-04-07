@@ -8,7 +8,7 @@ const int NUM_SERVO = 6; // How many servos
 // PWM signals
 const int BLDC_MIN_PWM = 1100; // Configure in BLHELI_S firmware
 const int BLDC_MAX_PWM = 1900;
-const int IDLE_PWM = (BLDC_MAX_PWM+BLDC_MIN_PWM)/2;//         Front
+const int IDLE_PWM = (BLDC_MAX_PWM + BLDC_MIN_PWM)/2;//       Front
 //                                                           |     | 
 // BLDC motors pins                                BLDC_0_PIN       BLDC_0_PIN
 const int BLDC_0_PIN = 32;//                                |       |     
@@ -32,6 +32,6 @@ const int SERVO_PINS[NUM_SERVO] = {STEER_0_PIN, STEER_1_PIN, PROP_0_PIN, PROP_1_
 // Servomotors initial positions, same order as previous array
 const float SERVO_INIT[NUM_SERVO] = {122, 63, 97, 101, 110, 69};
 // Servomotors maximum angle (in degrees) allowed (+- from initial position)
-const float MAX_ANGLE = 10;
+const float MAX_ANGLE = 15;
 
 #endif

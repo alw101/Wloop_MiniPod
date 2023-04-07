@@ -10,13 +10,13 @@ Controller::Controller() {
 
 int Controller::getxVal() {
     x_val = analogRead(JOYSTICK_X_PIN);
-    x_val = map(x_val, 0, 4095, -100, 100);
+    x_val = map(x_val, 0, 4095, -100, 100)-X_OFFSET;
     return x_val;
 }
 
 int Controller::getyVal() {
     y_val = analogRead(JOYSTICK_Y_PIN);
-    y_val = map(y_val, 0, 4095, -100, 100);
+    y_val = map(y_val, 0, 4095, -100, 100)-y_OFFSET;
     return y_val;
 }
 

@@ -19,9 +19,8 @@ typedef struct dataPack {
 esp_now_peer_info_t peerInfo;
 // Callback function when sending data
 void OnDataSent(const uint8_t *mac_addr, esp_now_send_status_t status) {
-  Serial.print("Last Packet Send Status:\t ");
-  Serial.println(status);
-  Serial.println(status == ESP_NOW_SEND_SUCCESS ? "Message sent" : "Message failed");
+  if (status != ESP_NOW_SEND_SUCCESS)
+    Serial.println("Message failed");
 }
 
 // "Arduino" code ----------------------------------------------------------------------------------
