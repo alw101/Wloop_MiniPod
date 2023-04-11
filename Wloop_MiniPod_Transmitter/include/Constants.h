@@ -7,7 +7,7 @@ const int JOYSTICK_Y_PIN = 35;
 const int POTENTIOMETER_PIN = 32;
 
 // Controller offsets
-const int X_OFFSET = 37;
-const int y_OFFSET = 39;
+const int X_OFFSET = 204;
+const int Y_OFFSET = 184;
 
 #endif

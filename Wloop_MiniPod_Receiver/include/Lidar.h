@@ -20,7 +20,7 @@ public:
     void setTarget(float newTarget);
     // Read current distance value, stores it in "distance" and returns the value
     float measureDistance();
-    
+    // 
 
 };
 

@@ -4,9 +4,7 @@
 
 // Class constructor
 Drivetrain::Drivetrain() { 
-    bidirectional = false; // False by default
-    mode = 0; // 0 by default
-    k_sensitivity = 0.8;
+    k_sensitivity = 0.5;
     // Initialize motor speeds
     for (int i = 0; i < NUM_BLDC_PAIRS; i++) {
         BLDCSignals[i] = IDLE_PWM;
@@ -28,14 +26,6 @@ void Drivetrain::initializeAll() {
     }
     // Idle
     stopAll();
-}
-
-void Drivetrain::setMode(uint8_t newMode) {
-    mode = newMode;
-}
-
-uint8_t Drivetrain::getMode() {
-    return mode;
 }
 
 void Drivetrain::runAll() {
@@ -67,9 +57,6 @@ int Drivetrain::checkSpeed(int speed) {
     // Handle out-of-bounds signals
     if (speed > 100)
         return 100;
-    else if (bidirectional && speed < -100) {
-        return -100;
-    }
     else if (speed < 0)
         return 0;
     return speed;
@@ -89,15 +76,8 @@ void Drivetrain::setBLDCSpeed(int speed) {
     runAll();
 }
 
-void Drivetrain::bidirectionalControl(bool newMode) {
-    bidirectional = newMode;
-}
-
 int Drivetrain::speedToPWM(int speed) {
-    if (bidirectional)
-        return map(speed, -100, 100, BLDC_MIN_PWM, BLDC_MAX_PWM);
-    else
-        return map(speed, 0, 100, IDLE_PWM, BLDC_MAX_PWM);
+    return map(speed, 0, 100, BLDC_MIN_PWM, BLDC_MAX_PWM);
 }
 
 // Servo methods -----------------------------------------------------------------------------

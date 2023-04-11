@@ -7,10 +7,6 @@ class Drivetrain {
 
 private:
 
-    // Settings
-    bool bidirectional; // false by default, can be changed
-    uint8_t mode; // 0 by default, sets the run mode
-
     // For BLDC motors
     Servo BLDCMotors[NUM_BLDC_PAIRS]; // Array of BLDC motors
     int BLDCSignals[NUM_BLDC_PAIRS]; // Array containing PWM signals
@@ -27,10 +23,6 @@ public:
 
     // Boot sequence
     void initializeAll();
-    // Set the pod's mode (idle, manual, auto-guidance, etc.)
-    void setMode(uint8_t newMode);
-    // Get the pod's current mode
-    uint8_t getMode();
     // Run the motors & servos, call everytime values are updated
     void runAll();
     // stop all BLDC motors and reset servo positions
@@ -44,8 +36,6 @@ public:
     void setBLDCSpeed(int BLDCMotorPair, int speed);
     // Set the speed of all motors (min: 0, max: 100)
     void setBLDCSpeed(int speed);
-    // Change to bidirectional mode -> Could fuck up steering, but won't break the pod (hopefully?)
-    void bidirectionalControl (bool newMode);
     // Conversion to PWM signal
     int speedToPWM(int speed);
 
