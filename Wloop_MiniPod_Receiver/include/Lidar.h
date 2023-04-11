@@ -4,8 +4,8 @@
 class Lidar {
 
 private:
-
-    float distance;
+    VL53L1X sensor;
+    int distance;
     float target;
 
 public:
@@ -14,13 +14,14 @@ public:
     Lidar();
 
     // Initialization sequence
-    void initialize();
+    void initialize(uint8_t XShutPin, int I2CAddress);
 
     // Set a new target distance
     void setTarget(float newTarget);
     // Read current distance value, stores it in "distance" and returns the value
-    float measureDistance();
-    // 
+    int measureDistance();
+    // Lidar steer values
+    int steer();
 
 };
 

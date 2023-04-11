@@ -5,6 +5,11 @@
 const int NUM_BLDC_PAIRS = 4; // How many pairs of BLDC motors
 const int NUM_SERVO = 6; // How many servos 
 
+// Sensors
+const uint8_t TX0 = 1;
+const uint8_t RX0 = 0.38;
+const float LIDAR_Kp = 0.3;
+
 // PWM signals
 const int BLDC_MIN_PWM = 1100; // Configure in BLHELI_S firmware
 const int BLDC_MAX_PWM = 1900;
