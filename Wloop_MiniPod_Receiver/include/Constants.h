@@ -34,4 +34,8 @@ const float SERVO_INIT[NUM_SERVO] = {122, 63, 97, 101, 110, 69};
 // Servomotors maximum angle (in degrees) allowed (+- from initial position)
 const float MAX_ANGLE = 15;
 
+//LIDAR pins 
+const uint8_t NUM_LIDAR = 2;
+const uint8_t X_SHUT_PINS[] = { 18, 19 };
+
 #endif

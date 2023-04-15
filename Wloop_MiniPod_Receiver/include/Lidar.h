@@ -7,6 +7,10 @@ private:
 
     float distance;
     float target;
+    VL53L1X sensor;
+    xShutPin;
+    sensorNum;
+
 
 public:
 
